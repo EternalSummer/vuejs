@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <input type="text" v-model="inputText" @keyup.enter="handleSubmit"/>
+            <button @click="handleSubmit">提交</button>
+            <ul>
+                <todo-item v-for="(item,index) of todoList" :content="item" :index="index" @delete="handleDelete">
+                </todo-item>
+            </ul>
+    </div>
+    <script src="./index.js" ></script>
+    <style>
+        input{width: 200px; height: 30px; border-radius: 3px;border: 1px solid #ccc;}
+    </style>
+</body>
+</html>
